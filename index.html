@@ -1,0 +1,206 @@
+<title>Jeremey</title>
+<meta name="description" content="Notes on sugar, strategy, and the space in between.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --paper: #efece3;
+    --paper-line: #e2ddcf;
+    --ink: #221f1a;
+    --ink-soft: #6b6558;
+    --accent: #a9752f;
+    --accent-soft: #e7d3ac;
+    --rule: #d8d2c4;
+    --shadow: 0 1px 0 rgba(34, 31, 26, 0.06);
+
+    --font-display: "Fraunces", ui-serif, Georgia, "Times New Roman", serif;
+    --font-body: "Public Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #1b1814;
+      --paper-line: #241f19;
+      --ink: #ece6d8;
+      --ink-soft: #a89d87;
+      --accent: #d7a552;
+      --accent-soft: #4a3a22;
+      --rule: #3a352b;
+      --shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background: var(--paper);
+    background-image: repeating-linear-gradient(
+      to bottom,
+      var(--paper-line) 0,
+      var(--paper-line) 1px,
+      transparent 1px,
+      transparent 3em
+    );
+    color: var(--ink);
+    font-family: var(--font-body);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6vh 1.5rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+
+  main {
+    width: 100%;
+    max-width: 34rem;
+  }
+
+  .eyebrow {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 0.9rem;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(2.75rem, 9vw, 4rem);
+    line-height: 1;
+    letter-spacing: -0.01em;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  .rule {
+    width: 3rem;
+    height: 2px;
+    background: var(--accent);
+    border: none;
+    margin: 1.4rem 0 1.4rem;
+  }
+
+  .tagline {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.25rem;
+    color: var(--ink);
+    margin: 0 0 1.6rem;
+    max-width: 30ch;
+  }
+
+  .bio {
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    max-width: 42ch;
+    margin: 0 0 3rem;
+  }
+
+  .bio strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  nav.links {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--rule);
+  }
+
+  nav.links a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.1rem 0.15rem;
+    border-bottom: 1px solid var(--rule);
+    color: var(--ink);
+    text-decoration: none;
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 1.05rem;
+    transition: color 0.15s ease, padding-left 0.15s ease;
+  }
+
+  nav.links a:hover,
+  nav.links a:focus-visible {
+    color: var(--accent);
+    padding-left: 0.4rem;
+  }
+
+  nav.links a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  nav.links .label small {
+    display: block;
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+    margin-top: 0.15rem;
+  }
+
+  nav.links .arrow {
+    font-family: var(--font-display);
+    font-style: italic;
+    color: var(--accent);
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  footer {
+    margin-top: 3rem;
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+    letter-spacing: 0.02em;
+  }
+</style>
+
+<main>
+  <p class="eyebrow">Chicago</p>
+  <h1>Jeremey</h1>
+  <hr class="rule">
+  <p class="tagline">Notes on sugar, strategy, and the space in between.</p>
+  <p class="bio">
+    I've spent my career in the <strong>sugar and sweetener industry</strong>,
+    and I'm starting to write down the parts of it worth sharing &mdash;
+    alongside Chicago, cooking, and whatever else is rattling around.
+    This is the front door to all of it.
+  </p>
+
+  <nav class="links">
+    <a href="https://substack.com/@jeremeyh" target="_blank" rel="noopener">
+      <span class="label">Read the newsletter<small>Substack</small></span>
+      <span class="arrow">&#8594;</span>
+    </a>
+    <a href="mailto:hello@jeremey.me">
+      <span class="label">Say hello<small>hello@jeremey.me</small></span>
+      <span class="arrow">&#8594;</span>
+    </a>
+    <a href="https://www.linkedin.com/in/jeremeyh/" target="_blank" rel="noopener">
+      <span class="label">Connect<small>LinkedIn</small></span>
+      <span class="arrow">&#8594;</span>
+    </a>
+  </nav>
+
+  <footer>jeremey.me</footer>
+</main>
