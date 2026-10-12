@@ -287,7 +287,7 @@ def page_about(c):
 </section>
 <div class="rows">
 {row("Career", '''<ul class="career">
-  <li><span>MycoTechnology</span><span class="years">2026–present</span><span class="role">Senior Account Manager</span></li>
+  <li class="now"><span>MycoTechnology</span><span class="years">2026–present</span><span class="role">Senior Account Manager</span></li>
   <li><span>OFI</span><span class="years">2025–2026</span><span class="role">Senior Scientist, Beverage Solutions</span></li>
   <li><span>Kraft Heinz</span><span class="years">2023–2025</span><span class="role">Senior Scientist, Ingredient Technology</span></li>
   <li><span>Kraft Heinz</span><span class="years">2019–2023</span><span class="role">Scientist, R&amp;D</span></li>
