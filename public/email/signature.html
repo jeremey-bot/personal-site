@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Email signature | Jeremey Harris</title>
+<style>
+  :root { --ink:#000; --grey:#5E5E5E; --cobalt:#1F3BD6; color-scheme: light; }
+  body { margin:0; padding:24px 16px 48px; background:#fff; color:var(--ink); font-family:"Helvetica Neue",Helvetica,Arial,sans-serif; -webkit-text-size-adjust:100%; }
+  .wrap { max-width:36rem; margin:0 auto; }
+  h1 { font-size:22px; font-weight:600; letter-spacing:-0.01em; margin:0 0 6px; }
+  .note { color:var(--grey); font-size:15px; line-height:1.5; margin:0 0 20px; }
+  .frame { border-top:2px solid var(--ink); border-bottom:1px solid var(--ink); padding:20px 0; margin:0 0 20px; }
+  button { font:600 17px/1 "Helvetica Neue",Helvetica,Arial,sans-serif; background:var(--cobalt); color:#fff; border:0; border-radius:0; padding:14px 18px; cursor:pointer; -webkit-appearance:none; }
+  button:focus-visible { outline:3px solid var(--ink); outline-offset:3px; }
+  .status { display:inline-block; margin-left:12px; color:var(--grey); font-size:15px; }
+  ol { padding-left:1.2em; font-size:15px; line-height:1.55; }
+  li + li { margin-top:6px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Email signature</h1>
+  <p class="note">Open this page in Safari on your iPhone, tap Copy signature, then paste it into Settings.</p>
+
+  <div class="frame">
+<!-- SIGNATURE START: inline styles only, no tables, one hosted image (iOS Mail keeps all three) -->
+<div id="sig" style="font-family:'Hanken Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:13px;line-height:19px;">
+<a href="https://jeremey.me" style="text-decoration:none;border:0;"><img src="https://jeremey.me/email/jh-mark.png" width="36" height="36" alt="JH" style="display:block;width:36px;height:36px;border:0;"></a>
+<div style="font-size:16px;line-height:20px;font-weight:600;letter-spacing:-0.2px;padding-top:10px;">Jeremey Harris</div>
+<div>Ingredient strategy for food &amp; beverage</div>
+<div style="padding-top:6px;"><a href="https://jeremey.me" style="color:#1F3BD6;text-decoration:none;">jeremey.me</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="mailto:hello@jeremey.me" style="color:#1F3BD6;text-decoration:none;">hello@jeremey.me</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://www.linkedin.com/in/jeremeyh/" style="color:#1F3BD6;text-decoration:none;">LinkedIn</a></div>
+<div style="font-size:11px;line-height:16px;color:#5E5E5E;padding-top:6px;">Views are my own and don’t represent my employer.</div>
+</div>
+<!-- SIGNATURE END -->
+  </div>
+
+  <p><button type="button" id="copy">Copy signature</button><span class="status" id="status" role="status"></span></p>
+
+  <ol>
+    <li>Tap <strong>Copy signature</strong>.</li>
+    <li>Open <strong>Settings → Apps → Mail → Signature</strong>. Choose <em>Per Account</em> if you only want it on your personal address.</li>
+    <li>Clear the old signature, then touch and hold in the field and tap <strong>Paste</strong>.</li>
+    <li>If the blue square or the colors disappear, shake the iPhone straight away and tap <strong>Undo Change Attributes</strong>.</li>
+    <li>Send yourself a test email.</li>
+  </ol>
+</div>
+<script>
+(function () {
+  var btn = document.getElementById('copy'), status = document.getElementById('status'), sig = document.getElementById('sig');
+  function selectSig() {
+    var r = document.createRange(); r.selectNodeContents(sig);
+    var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); return s;
+  }
+  function done(ok) { status.textContent = ok ? 'Copied. Now paste it in Settings.' : 'Select the signature above and copy it.'; }
+  btn.addEventListener('click', function () {
+    var html = sig.outerHTML, text = sig.innerText;
+    try {
+      if (navigator.clipboard && window.ClipboardItem) {
+        navigator.clipboard.write([new ClipboardItem({
+          'text/html': new Blob([html], { type: 'text/html' }),
+          'text/plain': new Blob([text], { type: 'text/plain' })
+        })]).then(function () { done(true); }, function () {
+          selectSig(); var ok = false; try { ok = document.execCommand('copy'); } catch (e) {} done(ok);
+        });
+        return;
+      }
+    } catch (e) {}
+    selectSig(); var ok = false; try { ok = document.execCommand('copy'); } catch (e) {} done(ok);
+  });
+})();
+</script>
+</body>
+</html>

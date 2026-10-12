@@ -410,6 +410,10 @@ def build(mode):
         if (SRC / "og-image.png").exists():
             shutil.copy(SRC / "og-image.png", out / "assets/og-image.png")
         shutil.copy(SRC / "favicon.svg", out / "favicon.svg")
+        # Email signature kit: hosted mark image + a noindex copy page (not linked, not in the sitemap)
+        (out / "email").mkdir(exist_ok=True)
+        for name in ("jh-mark.png", "signature.html"):
+            shutil.copy(SRC / "email" / name, out / "email" / name)
         (out / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\n")
         urls = "".join(f"  <url><loc>{SITE}{'/' if PAGES[k][0] == '/' else PAGES[k][0]}</loc><lastmod>2026-10-12</lastmod></url>\n"
                        for k in PAGES if k != "404")
