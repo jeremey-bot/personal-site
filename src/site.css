@@ -99,8 +99,9 @@ a:focus-visible { outline: 3px solid var(--signal); outline-offset: 3px; }
 /* ---------- Opening block ---------- */
 .opening { margin-top: clamp(2rem, 5vh, 3.5rem); border-top: 2px solid var(--rule); padding-top: var(--gutter); row-gap: 1.25rem; }
 .opening .descriptor { grid-column: 1 / span 5; margin: 0; font-weight: 500; }
-.opening .text { grid-column: 7 / -1; display: grid; gap: 1.25rem; }
+.opening .text { grid-column: 7 / -1; display: grid; gap: 1.25rem; align-content: start; }
 .opening .lead-photo { grid-column: 1 / span 4; }
+.opening .text p { margin: 0; }
 
 .action { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1.25rem; }
 .button {
@@ -144,7 +145,7 @@ a:focus-visible { outline: 3px solid var(--signal); outline-offset: 3px; }
 .career .role { color: var(--grey); grid-column: 1 / -1; }
 
 .portrait { margin: 0; }
-.portrait img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; object-position: 50% 25%; filter: grayscale(1) contrast(1.1); }
+.portrait img { width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; object-position: 50% 25%; filter: grayscale(1) contrast(1.1); }
 
 .next { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
 

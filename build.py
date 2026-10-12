@@ -109,7 +109,7 @@ def page_home(c):
 {row("Perspective", f'''<p class="statement">Stop subtracting sugar. Decide how much sweetness a product needs, then design the system to deliver it.</p>
 <p><a href="{L('perspective')}">Three beliefs about ingredient decisions</a></p>''')}
 <section class="grid row" aria-labelledby="h-about">
-  <div class="side"><h2 id="h-about" class="label" style="margin:0 0 1rem;font-size:1.0625rem;font-weight:500">About</h2><figure class="portrait"><img src="{c.photo}" alt="Portrait of Jeremey Harris" width="432" height="432"></figure></div>
+  <div class="side"><h2 id="h-about" class="label" style="margin:0 0 1rem;font-size:1.0625rem;font-weight:500">About</h2><figure class="portrait"><img src="{c.photo}" alt="Portrait of Jeremey Harris" width="960" height="960"></figure></div>
   <div class="body prose">
     <p>I studied food science at the University of Illinois and have worked at ASR Group, Kraft Heinz and OFI. Today I’m on the commercial side at MycoTechnology. I live in Chicago.</p>
     <p><a href="{L('about')}">More about me</a></p>
@@ -277,7 +277,7 @@ def page_about(c):
         body=f"""
 <h1 class="page-title">About</h1>
 <section class="grid opening" aria-label="Story">
-  <figure class="portrait lead-photo"><img src="{c.photo}" alt="Portrait of Jeremey Harris" width="432" height="432"></figure>
+  <figure class="portrait lead-photo"><img src="{c.photo}" alt="Portrait of Jeremey Harris" width="960" height="960"></figure>
   <div class="text prose">
     <p>I got into food science because I love food and what it does for people: the way a meal or a drink can make someone feel. I studied food science at the University of Illinois and started my career at ASR Group, the cane sugar refiner, just as sweeteners were becoming one of the industry’s biggest questions. They still are.</p>
     <p>At Kraft Heinz I spent six years in R&amp;D. I led the formulation behind <a href="{L('capri')}">Capri Sun’s 40% sugar reduction</a>, took <a href="{L('mio')}">MiO’s Big Bottle</a> from concept to launch, and worked on sweetener technology strategy. I also helped run a statistics group that taught colleagues experimental design, and built the R&amp;D request-tracking system that earned a Golden Noodle Award.</p>
