@@ -12,13 +12,19 @@ This is the multi-page personal site built on 2026-10-12 to the brief in `BRIEF 
 
 ## How it's deployed
 
-The site goes live through the existing setup: GitHub repo `jeremey-bot/personal-site`, deployed by a Cloudflare Worker on every push.
+GitHub repo `jeremey-bot/personal-site`, deployed by a Cloudflare Worker on every push to `main`. `wrangler.jsonc` serves `./public`, so the repo's own files (README, build script) are not public, and unknown URLs show `public/404.html`. Live since 2026-10-12.
 
-To launch:
-1. Copy `public/`, `wrangler.jsonc`, `build.py`, `src/` and this README into the repo root.
-2. Remove the old root `index.html`.
-3. Push. `wrangler.jsonc` now serves `./public`, so the repo's own files (README, build script) are no longer public. Unknown URLs show `public/404.html`.
-4. Check jeremey.me and www.jeremey.me on desktop and phone. The www redirect rule stays as it is.
+To change the site: edit `build.py` or `src/`, run `python3 build.py`, check `public/`, then commit and push. Check jeremey.me on desktop and phone afterwards.
+
+## Brand system
+
+The site follows the Jeremey Harris brand system (2026-10-12): white paper, black type, cobalt `#1F3BD6` for identity and links, Illini Orange `#FF5F05` for proof only (Evidence figures at 24px and up; `#B93C0A` for smaller orange text), Hanken Grotesk throughout. The tokens are at the top of `src/site.css`. The full rules are in `brand-system/BRAND-BOOK.md` and `BRAND-SYSTEM.md` in the vault project folder.
+
+## Email signature kit
+
+`src/email/` is copied to `public/email/` by the build:
+- `jh-mark.png`: the JH mark at 108 px, shown at 36 px in email (hosted so iPhone Mail keeps it).
+- `signature.html`: served at https://jeremey.me/email/signature. Open it in Safari on the iPhone, tap Copy signature, and paste into Settings → Apps → Mail → Signature. It is noindex, not linked from the site and not in the sitemap.
 
 ## Who owns what (brief §8)
 
@@ -30,6 +36,6 @@ Jeremey owns everything:
 
 The site uses no third-party services except Google Fonts. There are no forms, analytics or cookies.
 
-## Before launch
+## Open items
 
-Run the brief's §11 checklist. The open items are tracked in `Personal Brand Plan.md`.
+The brief's §11 checklist and anything still open are tracked in `Personal Brand Plan.md`.
