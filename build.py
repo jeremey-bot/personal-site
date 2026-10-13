@@ -161,10 +161,10 @@ def page_work(c):
     def entry(key, label, title, summary):
         return row(label, f'''<article class="entry"><h3><a href="{L(key)}">{title}</a></h3><p>{summary}</p><p><a href="{L(key)}">Read the case study</a></p></article>''', h="p")
     return dict(
-        title="Selected work | Jeremey Harris",
+        title="Work | Jeremey Harris",
         desc="Case studies: Capri Sun’s 40% sugar reduction, the MiO Big Bottle launch, and ASR Group’s early sweetener partnerships.",
         body=f"""
-<h1 class="page-title">Selected work</h1>
+<h1 class="page-title">Work</h1>
 <section class="grid opening" aria-label="Introduction">
   <div class="text"><p class="lede">Three projects that show how I approach ingredient decisions: what I owned, what we decided and what happened.</p></div>
 </section>
@@ -182,7 +182,7 @@ def case(c, title, desc, heading, lede, sections, sources, next_key, next_title)
     if sources:
         rows += "\n" + row("Sources", src_list(*sources))
     return dict(title=f"{title} | Jeremey Harris", desc=desc, og_type="article", body=f"""
-<p class="small" style="margin:clamp(2rem,6vh,4rem) 0 0"><a href="{L('work')}">Selected work</a></p>
+<p class="small" style="margin:clamp(2rem,6vh,4rem) 0 0"><a href="{L('work')}">Work</a></p>
 <h1 class="page-title" style="margin-top:0.75rem">{heading}</h1>
 <section class="grid opening" aria-label="Summary">
   <div class="text"><p class="lede">{lede}</p></div>
