@@ -103,7 +103,7 @@ def page_home(c):
   <li>Experimental design for formulation</li>
 </ul>
 <p><a href="{L('expertise')}">How this experience is useful</a></p>''')}
-{row("Selected work", f'''<article class="entry"><h3><a href="{L('capri')}">Capri Sun: 40% less sugar</a></h3><p>Formulation for the largest Capri Sun renovation at Kraft Heinz.</p></article>
+{row("Work", f'''<article class="entry"><h3><a href="{L('capri')}">Capri Sun: 40% less sugar</a></h3><p>Formulation for the largest Capri Sun renovation at Kraft Heinz.</p></article>
 <article class="entry"><h3><a href="{L('mio')}">MiO Big Bottle</a></h3><p>A double-size line extension, taken through a safety review to launch.</p></article>
 <article class="entry"><h3><a href="{L('asr')}">New sweeteners, from evaluation to partnership</a></h3><p>Early technical work behind ASR Group’s partnerships in Reb M and tagatose.</p></article>''')}
 {row("Perspective", f'''<p class="statement">Stop subtracting sugar. Decide how much sweetness a product needs, then design the system to deliver it.</p>
@@ -326,7 +326,7 @@ def page_404(c):
         body=f"""
 <h1 class="page-title">This page doesn’t exist.</h1>
 <section class="grid opening" aria-label="Where to go next">
-  <div class="text"><p class="lede">The link may be out of date. Start from the <a href="{L('home')}">home page</a>, or see <a href="{L('work')}">selected work</a>.</p></div>
+  <div class="text"><p class="lede">The link may be out of date. Start from the <a href="{L('home')}">home page</a>, or see my <a href="{L('work')}">work</a>.</p></div>
 </section>
 """)
 
